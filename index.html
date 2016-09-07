@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<div id="item"><h2>Ajax - DOM</h2></div>
+
+<button type="button" onclick="loadDoc()">Alterar</button>
+
+<script>
+function loadDoc() { 
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("item").innerHTML = 'manipulado';
+    }
+  };
+  var x = xhttp.open("GET", "http://www.google.com", true);
+  xhttp.send();
+  console.log(xhttp);
+}
+</script>
+</body>
+</html>
+
